@@ -1,5 +1,5 @@
 {
-  "name": "graphql",
+  "name": "graphql-tutorial",
   "version": "1.0.0",
   "description": "GraphQL",
   "author": "drklrd",
@@ -8,6 +8,7 @@
     "start": "node lib/index"
   },
   "dependencies": {
+    "graphql": "^0.10.5",
     "mongodb": "^2.1.18",
     "pg": "^6.0.1"
   },
