@@ -5,12 +5,13 @@
   "author": "drklrd",
   "license": "ISC",
   "scripts": {
-    "start": "node lib/index"
+    "dev": "nodemon --exec node lib/index.js"
   },
   "dependencies": {
     "express": "^4.15.4",
     "express-graphql": "^0.6.7",
     "graphql": "^0.10.5",
+    "humps": "^2.0.1",
     "mongodb": "^2.1.18",
     "pg": "^6.0.1"
   },

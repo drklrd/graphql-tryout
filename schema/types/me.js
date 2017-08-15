@@ -6,6 +6,8 @@ const {
 } = require('graphql');
 
 
+const { fromSnakeCase } = require('../../lib/util');
+
 module.exports = new GraphQLObjectType({
 	name : 'MeType',
 	fields : {
@@ -14,6 +16,9 @@ module.exports = new GraphQLObjectType({
 		},
 		email : {
 			type : new GraphQLNonNull(GraphQLString)
-		}
+		},
+		firstName : fromSnakeCase(GraphQLString),
+		lastName : fromSnakeCase(GraphQLString)
+
 	}
 })
