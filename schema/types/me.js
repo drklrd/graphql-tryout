@@ -17,8 +17,16 @@ module.exports = new GraphQLObjectType({
 		email : {
 			type : new GraphQLNonNull(GraphQLString)
 		},
-		firstName : fromSnakeCase(GraphQLString),
-		lastName : fromSnakeCase(GraphQLString)
+		firstName : {
+			type : GraphQLString
+		},
+		lastName : {
+			type : GraphQLString
+		},
+		fullName : {
+			type : GraphQLString,
+			resolve : obj => `${obj.firstName} ${obj.lastName}`
+		}
 
-	}
+	} 
 })
