@@ -10,7 +10,7 @@ const {
 
 const { fromSnakeCase } = require('../../lib/util');
 const ContestType = require('./contest');
-const pgdb = require('../../database/pgdb');
+// const pgdb = require('../../database/pgdb');
 const mdb = require('../../database/mdb');
 
 
@@ -35,8 +35,9 @@ module.exports = new GraphQLObjectType({
 		},
 		contests : {
 			type : new GraphQLList(ContestType),
-			resolve(obj,args,{ pgPool }){
-				return pgdb(pgPool).getContests(obj);
+			resolve(obj,args,{ loaders }){
+				return loaders.contestsForUserIds.load(obj.id);
+				// return pgdb(pgPool).getContests(obj);
 			}
 		},
 		contestsCount : {
