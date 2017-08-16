@@ -259,3 +259,25 @@ mutation AddResource($input : CreateLinkInput!){
 }
 
 ```
+
+### Querying unions
+
+```javascript
+
+{
+  me(key:"0000"){
+    email
+    fullName
+    activities{
+      ... on Contest{
+        title
+      }
+      ... on Name {
+        label
+      }
+    }
+    
+  }
+}
+
+```

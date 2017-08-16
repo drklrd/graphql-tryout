@@ -10,6 +10,7 @@ const {
 
 const { fromSnakeCase } = require('../../lib/util');
 const ContestType = require('./contest');
+const ActivityType = require('./activity');
 // const pgdb = require('../../database/pgdb');
 // const mdb = require('../../database/mdb');
 
@@ -66,6 +67,12 @@ module.exports = new GraphQLObjectType({
 					then(res => res[fieldName]);
 					
 
+			}
+		},
+		activities : {
+			type : new GraphQLList(ActivityType),
+			resolve(obj,args, {loaders}){
+				return loaders.activitesForUserIds.load(obj.id);
 			}
 		}
 

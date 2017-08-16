@@ -12,7 +12,7 @@ const NameType = require('./name');
 // const pgdb = require('../../database/pgdb');
 
 module.exports = new GraphQLObjectType({
-	name : 'ContestType',
+	name : 'Contest',
 	fields : {
 		id : { type : GraphQLID },
 		code : { type : new GraphQLNonNull(GraphQLString) },
